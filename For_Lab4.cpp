@@ -1,8 +1,8 @@
 /************************************
  * Автор: Станковский П.А.          *
- * Дата: 17.10.2023                 *
- * Название: Shitcode Lab4 v1.1     *
- * https://onlinegdb.com/MmUSj3ouO  *
+ * Дата: 19.10.2023                 *
+ * Название: Shitcode Lab4 v1.2     *
+ * https://onlinegdb.com/fV9x0QvXTZ *
  ************************************/
 #include <iostream>
 #include <math.h>
@@ -10,31 +10,29 @@ using namespace std;
 
 int main() {
     
-    setlocale(LC_ALL, "Russian");
-    
-    int n = 3, i, j;
-    int B[n][n] = {
+    int noSingleLetterIndex1 = 3, noSingleLetterIndex2, originalNameForIndex;
+    int B[noSingleLetterIndex1][noSingleLetterIndex1] = {
     {1, 2, 3},
     {5, -6, -2},
     {-3, 0, -9}
     };
     double numberOfNegative, smallestOfNegative;
     
-    for (i = 0; i < n; ++i) {
-        for (j = 0; j < n; ++j) {
-            if (B[i][j] < 0) {
+    for (noSingleLetterIndex2 = 0; noSingleLetterIndex2 < noSingleLetterIndex1; ++noSingleLetterIndex2) {
+        for (originalNameForIndex = 0; originalNameForIndex < noSingleLetterIndex1; ++originalNameForIndex) {
+            if (B[noSingleLetterIndex2][originalNameForIndex] < 0) {
                 numberOfNegative += 1;
-                if (B[i][j] < smallestOfNegative) {
-                    smallestOfNegative = B[i][j];
+                if (B[noSingleLetterIndex2][originalNameForIndex] < smallestOfNegative) {
+                    smallestOfNegative = B[noSingleLetterIndex2][originalNameForIndex];
                 }
-            }
+            } 
         }
     }
 
     cout << "Исходная матрица: " << endl;
-    for (i = 0; i < n; ++i) {
-        for (j = 0; j < n; ++j) {
-            cout << B[i][j] << " ";
+    for (noSingleLetterIndex2 = 0; noSingleLetterIndex2 < noSingleLetterIndex1; ++noSingleLetterIndex2) {
+        for (originalNameForIndex = 0; originalNameForIndex < noSingleLetterIndex1; ++originalNameForIndex) {
+            cout << B[noSingleLetterIndex2][originalNameForIndex] << " ";
         }
         cout << endl;
     }  
